@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { SheetUpload } from './services/sheetUpload.service';
+import { SheetCompare } from './services/sheetCompare.service';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,7 @@ import { SheetUpload } from './services/sheetUpload.service';
   imports: [
     BrowserModule
   ],
-  providers: [SheetUpload],
+  providers: [SheetUpload,SheetCompare],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

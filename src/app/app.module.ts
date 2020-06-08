@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { SheetUpload } from './services/sheetUpload.service';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [SheetUpload],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

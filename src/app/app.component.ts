@@ -45,9 +45,11 @@ export class AppComponent {
     this.areBothFilesUploaded=this.sheetUploader.validateUploadedSheets();
     if (this.areBothFilesUploaded)
     {
-      alert('Both files have been uploaded');
-      this.sheetUploader.parseSheets();
-      this.sheetUploader.compareTwoSheets();     
+      //alert('Both files have been uploaded');
+      //this.sheetUploader.parseSheets();
+      //this.sheetUploader.compareTwoSheets();  
+      this.sheetUploader.readFile();  
+      //this.sheetUploader.displayFile(); 
     }
 
     else

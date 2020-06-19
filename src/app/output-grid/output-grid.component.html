@@ -1,0 +1,45 @@
+<div *ngIf ="displayGrid">
+    &nbsp;<span class = "badge badge-danger" style="font-size: 15px"> PS numbers with discrepancies are highlighted in red</span>
+    <br>
+
+    <!-- &nbsp;<span class = "badge badge-danger" style="font-size: 15px"> {{differenceCount}} discrepancies found.</span>
+    <br> -->
+
+    <!-- psno:0,
+    invSumStd:0.0,
+    invSumOff:0.0,
+    invSumOn:0.0,
+    itSumStd:0.0,
+    itSumOff:0.0,
+    itSumOn:0.0,
+    diff:false -->
+    <table class="table table-striped table-bordered">
+            <tbody>
+                <tr class ="table-head">
+                    <td>PS no.</td>
+                    <td>Sheet</td>
+                    <td>Sum of STD Hrs</td>
+                    <td>Sum of Offshift Hrs</td>
+                    <td>Sum of Onshift Hrs</td>
+                </tr>
+                <ng-template ngFor let-row [ngForOf]="EmpArray" let-i="index">
+                <tr>
+                    <td rowspan="2" [ngClass]="{mismatch:row.diff==true}">{{row.psno}}</td>
+                    <td>Invoice</td>
+                    <td>{{row.invSumStd}}</td>
+                    <td>{{row.invSumOff}}</td>
+                    <td>{{row.invSumOn}}</td>
+                </tr>
+                <tr>
+                        <!-- <td>{{row.psno}}</td> -->
+                        <td>Itime</td>
+                        <td>{{row.itSumStd}}</td>
+                        <td>{{row.itSumOff}}</td>
+                        <td>{{row.itSumOn}}</td>
+                    </tr>
+            </ng-template>
+            </tbody>
+
+        </table>
+
+</div>

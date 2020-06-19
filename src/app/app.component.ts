@@ -20,6 +20,8 @@ export class AppComponent {
   //flag to identify if both sheets have been successfully uploaded
   areBothFilesUploaded:Boolean=false;
 
+  displayGrid=false;
+
   /******************************************************************************************************
    * Functionality begins here
    * ***************************************************************************************************/
@@ -45,17 +47,16 @@ export class AppComponent {
     this.areBothFilesUploaded=this.sheetUploader.validateUploadedSheets();
     if (this.areBothFilesUploaded)
     {
-      //alert('Both files have been uploaded');
-      //this.sheetUploader.parseSheets();
-      //this.sheetUploader.compareTwoSheets();  
+ 
       this.sheetUploader.readFile();  
+      this.displayGrid=true;
       //this.sheetUploader.displayFile(); 
     }
 
-    else
-    {
-      alert ('One or more input files are missing');
-    }
+    // else
+    // {
+    //   alert ('One or more input files are missing');
+    // }
       
      
   }

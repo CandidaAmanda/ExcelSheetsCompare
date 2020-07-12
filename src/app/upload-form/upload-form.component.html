@@ -1,0 +1,35 @@
+<style>
+.content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    max-width: 960px;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+</style>
+
+<div class="content" role="main">
+    <label class="badge badge-info" style="font-size: 15px">*Kindly upload the two sheets that need to be compared</label>
+    <br>
+    <div class="row">    
+        <div >
+          <label class="badge badge-light" style="font-size: 20px">Invoice Sheet:</label>    
+          <input type="file" class="form-control" (input)="uploadedInvoiceSheet($event)" placeholder="Upload file" accept=".xlsx">    
+        </div> 
+    </div>
+  <br>
+    <div class="row">    
+        <div > 
+            <label class="badge badge-light" style="font-size: 20px">ITime Sheet:</label>    
+          <input type="file" class="form-control" (input)="uploadedItimeSheet($event)" placeholder="Upload file" accept=".xlsx">    
+        </div> 
+    </div>
+  <br>
+    <div >    
+        <button type="button" class="btn btn-dark" (click)="compareSheets()">Compare sheets</button>    
+      </div>  
+  </div>
+  
+  <output-grid [displayGrid]="displayGrid"></output-grid>
